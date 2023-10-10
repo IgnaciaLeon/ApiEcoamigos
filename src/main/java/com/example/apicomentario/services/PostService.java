@@ -12,5 +12,6 @@ public interface PostService {
     Post guardarPost(Post postNuevo);
     void borrarPost(Long id);
     Post editarPostPorId(Long id, Post postActualizado);
+    //Post meGustaPost(Long id, Post postMeGustaActualizado);
 
 }

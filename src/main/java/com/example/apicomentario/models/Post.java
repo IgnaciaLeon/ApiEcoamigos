@@ -24,6 +24,10 @@ public class Post {
     @DateTimeFormat
     private Date postFecha;
 
+    @Column(name = "me gusta")
+    @NotNull
+    private int postMeGusta;
+
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "usuariosId")
@@ -32,7 +36,6 @@ public class Post {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<Comentario> comentariosPost;
 
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
-    private List<Like> likesPost;
+
 
 }

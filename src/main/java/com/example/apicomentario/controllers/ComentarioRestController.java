@@ -1,6 +1,9 @@
 package com.example.apicomentario.controllers;
 
 import com.example.apicomentario.models.Comentario;
+import com.example.apicomentario.models.Post;
+import com.example.apicomentario.repositories.ComentarioRepository;
+import com.example.apicomentario.repositories.PostRepository;
 import com.example.apicomentario.services.ComentarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +16,9 @@ public class ComentarioRestController {
 
     @Autowired
     ComentarioServiceImpl comentarioService;
+
+    @Autowired
+    ComentarioRepository comentarioRepository;
 
     @GetMapping("/lista")
     public List<Comentario> listaComentarios() {
@@ -43,5 +49,28 @@ public class ComentarioRestController {
         Comentario comentarioMostrar = comentarioService.buscarComentarioPorId(id);
         return comentarioMostrar;
     }
+
+    @PostMapping("/like/{id}")
+    public Comentario meGustaComentario(@PathVariable Long id) {
+        Comentario comentario = comentarioRepository.findById(id).orElse(null);
+        if (comentario != null) {
+            comentario.setComentarioMeGusta(comentario.getComentarioMeGusta() + 1);
+            comentarioRepository.save(comentario);
+
+        }
+        return comentario;
+    }
+
+    @PostMapping("/dislike/{id}")
+    public Comentario noMeGustaComentario(@PathVariable Long id) {
+        Comentario comentario = comentarioRepository.findById(id).orElse(null);
+        if (comentario != null && comentario.getComentarioMeGusta() > 0) {
+            comentario.setComentarioMeGusta(comentario.getComentarioMeGusta() - 1);
+            comentarioRepository.save(comentario);
+        }
+        return comentario;
+    }
+
+
 
 }

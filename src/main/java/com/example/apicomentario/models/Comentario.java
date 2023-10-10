@@ -25,6 +25,10 @@ public class Comentario {
     @DateTimeFormat
     private Date comentarioFecha;
 
+    @Column(name = "me gusta")
+    @NotNull
+    private int comentarioMeGusta;
+
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "usuariosId")
@@ -34,9 +38,5 @@ public class Comentario {
     @ManyToOne
     @JoinColumn(name = "postsId")
     private Post post;
-
-    @OneToMany(mappedBy = "comentario", cascade = CascadeType.ALL)
-    private List<Like> likesComentario;
-
 
 }
