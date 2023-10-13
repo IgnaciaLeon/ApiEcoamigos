@@ -47,7 +47,7 @@ public class ComentarioServiceImpl implements ComentarioService{
         if (existeComentario){
             Comentario comentarioEscogido = comentarioRepository.findById(id).get();
             comentarioEscogido.setComentarioTexto(comentarioActualizado.getComentarioTexto());
-            comentarioEscogido.setComentarioFecha(comentarioActualizado.getComentarioFecha());
+            comentarioEscogido.setComentarioFechaCreado(comentarioActualizado.getComentarioFechaCreado());
             System.out.println("comentario actualizado");
             return comentarioRepository.save(comentarioEscogido);
         }else {

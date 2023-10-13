@@ -43,7 +43,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         usuarioRepository.deleteById(id);
         }
 
-    @Override
+   /*@Override
     public Usuario editarUsuarioPorId(Long id, Usuario usuarioActualizado) {
             Boolean existeUsuario = usuarioRepository.existsById(id);
             if (existeUsuario){
@@ -59,4 +59,8 @@ public class UsuarioServiceImpl implements UsuarioService {
 
             }
         }
+
+    */
+
+
     }

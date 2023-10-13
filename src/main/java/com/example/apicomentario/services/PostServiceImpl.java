@@ -51,8 +51,8 @@ public class PostServiceImpl implements PostService {
         Boolean existeComentario = postRepository.existsById(id);
         if (existeComentario) {
             Post postEscogido = postRepository.findById(id).get();
-            postEscogido.setPostFecha(postActualizado.getPostFecha());
-            postEscogido.setPostContenido(postActualizado.getPostContenido());
+            postEscogido.setPostFechacreado(postActualizado.getPostFechacreado());
+            postEscogido.setPostTexto(postActualizado.getPostTexto());
             System.out.println("post actualizado");
             return postRepository.save(postEscogido);
         } else {
@@ -61,15 +61,5 @@ public class PostServiceImpl implements PostService {
         }
     }
 
-   /* @Override
-    public Post contadorMeGusta(Long id, Post postMeGustaActualizado) {
-        Boolean existeMeGustaPost = postRepository.existsById(id);
-        if (existeMeGustaPost) {
-            Post agregarMeGusta = postRepository.findById(id).get();
-            return null;
 
-        }
-    }
-
-    */
 }

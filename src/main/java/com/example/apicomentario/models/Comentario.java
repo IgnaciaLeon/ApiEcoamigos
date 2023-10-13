@@ -4,8 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -22,11 +25,14 @@ public class Comentario {
     private String comentarioTexto;
 
     @Column(name = "fecha creado")
-    @DateTimeFormat
-    private Date comentarioFecha;
+    @CreationTimestamp
+    private LocalDateTime comentarioFechaCreado;
+
+    @Column(name = "fecha actualizado")
+    @UpdateTimestamp
+    private LocalDateTime comentarioFechaActualizado;
 
     @Column(name = "me gusta")
-    @NotNull
     private int comentarioMeGusta;
 
     @JsonIgnore

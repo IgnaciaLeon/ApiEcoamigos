@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("*")
+
 @RestController
 @RequestMapping("/usuario")
 public class UsuarioRestController {
@@ -31,11 +33,13 @@ public class UsuarioRestController {
         return "El usuario ha sido borrado";
     }
 
-    @PutMapping("/editar/{id}")
+/*    @PutMapping("/editar/{id}")
     public Usuario editarUsuarioPorId(@PathVariable Long id, @RequestBody Usuario usuarioActualizado){
         Usuario usuarioEditado = usuarioService.editarUsuarioPorId(id, usuarioActualizado);
         return usuarioEditado;
     }
+
+ */
 
     @GetMapping("/buscar/{id}")
     public Usuario usuarioPorId(@PathVariable Long id){

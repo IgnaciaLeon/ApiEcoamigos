@@ -10,5 +10,5 @@ public interface UsuarioService {
     Usuario buscarUsuarioPorId(Long id);
     Usuario guardarUsuario(Usuario usuarioNuevo);
     void borrarUsuario(Long id);
-    Usuario editarUsuarioPorId(Long id, Usuario usuarioActualizado);
+
 }
