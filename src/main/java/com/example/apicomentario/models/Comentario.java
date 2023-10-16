@@ -24,16 +24,16 @@ public class Comentario {
     @NotNull
     private String comentarioTexto;
 
-    @Column(name = "fecha creado")
+    @Column(name = "fecha_creado")
     @CreationTimestamp
     private LocalDateTime comentarioFechaCreado;
 
-    @Column(name = "fecha actualizado")
+    @Column(name = "fecha_actualizado")
     @UpdateTimestamp
     private LocalDateTime comentarioFechaActualizado;
 
-    @Column(name = "me gusta")
-    private int comentarioMeGusta;
+    @Column(name = "me_gusta")
+    private Integer comentarioMeGusta;
 
     @JsonIgnore
     @ManyToOne

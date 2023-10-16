@@ -6,7 +6,6 @@ import com.example.apicomentario.models.Post;
 import java.util.List;
 
 public interface PostService {
-    List<Post> listaDePosts();
 
     Post buscarPostPorId(Long id);
     Post guardarPost(Post postNuevo);

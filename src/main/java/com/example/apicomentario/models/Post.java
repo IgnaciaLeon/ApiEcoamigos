@@ -6,10 +6,9 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.format.annotation.DateTimeFormat;
+
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 @Entity
 @Data
@@ -23,16 +22,16 @@ public class Post {
     @NotNull
     private String postTexto;
 
-    @Column(name = "fecha creado")
+    @Column(name = "fecha_creado")
     @CreationTimestamp
     private LocalDateTime PostFechacreado;
 
-    @Column(name = "fecha actualizado")
+    @Column(name = "fecha_actualizado")
     @UpdateTimestamp
     private LocalDateTime postFechaActualizado;
 
-    @Column(name = "me gusta")
-    private int postMeGusta;
+    @Column(name = "me_gusta")
+    private Integer postMeGusta;
 
     @JsonIgnore
     @ManyToOne

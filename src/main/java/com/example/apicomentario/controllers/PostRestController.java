@@ -19,10 +19,11 @@ public class PostRestController {
     @Autowired
     PostRepository postRepository;
 
+
     @GetMapping("/lista")
-    public List<Post> listaPost() {
-        List<Post> mostrarListaPost = postService.listaDePosts();
-        return mostrarListaPost;
+    public List<Post> listaPostPorFecha() {
+        List<Post> mostrarListaPostPorFecha = postService.findPostByPostFechacreado();
+        return mostrarListaPostPorFecha;
     }
 
     @PostMapping("/guardar")

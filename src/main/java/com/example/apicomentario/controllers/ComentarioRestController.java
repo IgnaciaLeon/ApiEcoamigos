@@ -22,9 +22,9 @@ public class ComentarioRestController {
     ComentarioRepository comentarioRepository;
 
     @GetMapping("/lista")
-    public List<Comentario> listaComentarios() {
-        List<Comentario> mostrarListaComentario = comentarioService.listaDeComentarios();
-        return mostrarListaComentario;
+    public List<Comentario> listaComentarioPorFecha() {
+        List<Comentario> mostrarListaComentarioPorFecha = comentarioService.findComentarioByComentarioFechacreado();
+        return mostrarListaComentarioPorFecha;
     }
 
     @PostMapping("/guardar")

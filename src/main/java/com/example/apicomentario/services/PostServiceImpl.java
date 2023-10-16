@@ -17,11 +17,6 @@ public class PostServiceImpl implements PostService {
     @Autowired
     PostRepository postRepository;
 
-    @Override
-    public List<Post> listaDePosts() {
-        List<Post> listaPost = postRepository.findAll();
-        return listaPost;
-    }
 
     @Override
     public Post buscarPostPorId(Long id) {
@@ -61,5 +56,11 @@ public class PostServiceImpl implements PostService {
         }
     }
 
+
+    public List<Post> findPostByPostFechacreado() {
+        List<Post> listaPostPorFecha = postRepository.findPostByPostFechacreado();
+        return listaPostPorFecha;
+
+    }
 
 }

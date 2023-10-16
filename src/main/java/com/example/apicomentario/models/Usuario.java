@@ -2,8 +2,6 @@ package com.example.apicomentario.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -44,3 +42,9 @@ public class Usuario {
     private LocalDateTime UsuarioFechaActualizado;
 
 }
+
+//preguntar si el avatar va aqui o en post y comentarios
+
+
+
+

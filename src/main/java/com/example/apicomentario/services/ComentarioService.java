@@ -5,7 +5,6 @@ import com.example.apicomentario.models.Comentario;
 import java.util.List;
 
 public interface ComentarioService {
-    List<Comentario> listaDeComentarios();
 
     Comentario buscarComentarioPorId(Long id);
     Comentario guardarComentario(Comentario comentarioNuevo);

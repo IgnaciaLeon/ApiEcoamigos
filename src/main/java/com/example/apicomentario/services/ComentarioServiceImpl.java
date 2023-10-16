@@ -1,6 +1,7 @@
 package com.example.apicomentario.services;
 
 import com.example.apicomentario.models.Comentario;
+import com.example.apicomentario.models.Post;
 import com.example.apicomentario.repositories.ComentarioRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +15,7 @@ import java.util.List;
 public class ComentarioServiceImpl implements ComentarioService{
     @Autowired
     ComentarioRepository comentarioRepository;
-    @Override
-    public List<Comentario> listaDeComentarios(){
-        List<Comentario> listaComentarios = comentarioRepository.findAll();
-        return listaComentarios;
-    }
+
     @Override
     public Comentario buscarComentarioPorId(Long id){
         Boolean existeComentario = comentarioRepository.existsById(id);
@@ -55,6 +52,12 @@ public class ComentarioServiceImpl implements ComentarioService{
             return null;
 
         }
+    }
+
+    public List<Comentario> findComentarioByComentarioFechacreado() {
+        List<Comentario> listaComentarioPorFecha = comentarioRepository.findComentarioByComentarioFechacreado();
+        return listaComentarioPorFecha;
+
     }
 
 
