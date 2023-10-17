@@ -2,6 +2,7 @@ package com.example.apicomentario.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,13 +28,22 @@ public class Usuario {
     @Column (name = "token")
     private String usuarioToken;
 
+    @Column (name = "nombre")
+    private String usuarioNombre;
+
+    @Column (name = "email")
+    private String usuarioEmail;
+
+    @Column (name = "imagen")
+    private String usuarioImagen;
+
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Post> postsUsuario;
 
    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
    private List<Comentario> comentariosUsuario;
 
-   @JsonIgnore
+   //@JsonIgnore
     @CreationTimestamp
     private LocalDateTime UsuarioFechaCreado;
 
