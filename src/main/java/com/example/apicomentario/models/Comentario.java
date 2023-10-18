@@ -37,7 +37,7 @@ public class Comentario {
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "usuariosId")
+    @JoinColumn(name = "usuarioId")
     private Usuario usuario;
 
     @JsonIgnore

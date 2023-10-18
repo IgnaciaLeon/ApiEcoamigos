@@ -10,5 +10,7 @@ public interface UsuarioService {
     Usuario buscarUsuarioPorId(Long id);
     Usuario guardarUsuario(Usuario usuarioNuevo);
     void borrarUsuario(Long id);
+    Usuario findByEmail(String usuarioEmail);
+  //  void deleteByToken(String usuarioToken);
 
 }

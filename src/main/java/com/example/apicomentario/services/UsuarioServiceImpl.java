@@ -31,6 +31,35 @@ public class UsuarioServiceImpl implements UsuarioService {
             return null;
         }
     }
+
+    @Override
+    public Usuario findByEmail(String usuarioEmail) {
+        return usuarioRepository.findByUsuarioEmail(usuarioEmail);
+    }
+
+    /*@Override
+   public void deleteByToken (String usuarioToken) {
+       usuarioRepository.deleteByToken(usuarioToken);
+   }
+
+     */
+
+
+  /*  @Override
+    public Usuario buscarUsuarioPorToken(String usuarioToken) {
+        Boolean existeUsuarioToken = usuarioRepository.existsById(Long.valueOf(usuarioToken));
+        if (existeUsuarioToken){
+            Usuario tokenEscogido = usuarioRepository.findById(usuarioToken).get();
+            return tokenEscogido;
+        }else {
+            System.out.println("usuario invalido o inexistente");
+            return null;
+        }
+    }
+
+   */
+
+
 //preguntar ,método para buscar por nombres
     @Override
     public Usuario guardarUsuario(Usuario usuarioNuevo) {
